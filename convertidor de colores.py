@@ -3,37 +3,11 @@ from colorsys import hsv_to_rgb
 
 ventana=Tk()
 ventana.title("Conversor")
-ventana.geometry("250x610")
+ventana.geometry("260x525")
 ventana.resizable(1,1)
 ventana.configure(bg="#65B2FF")
 
 #Funciones
-def rgb_hsv(v):
-    rgb_r = rgb_r_entry.get() / 255.0
-    rgb_g = rgb_g_entry.get() / 255.0
-    rgb_b = rgb_b_entry.get() / 255.0
-
-    minimo = min (rgb_r, rgb_g, rgb_b)
-    maximo = max (rgb_r, rgb_g, rgb_b)
-    diff = maximo - minimo
-
-    if minimo == maximo:
-        val_hue = 0
-    elif maximo == rgb_r_entry:
-        val_hue = (60 * ((rgb_g - rgb_b)/diff)+360)%360
-    elif maximo == rgb_g_entry:
-        val_hue = (60 * ((rgb_g - rgb_b)/diff)+120)%360
-    elif maximo == rgb_b_entry:
-        val_hue = (60 * ((rgb_g - rgb_b)/diff)+240)%360
-
-    if maximo == 0:
-        val_saturation = 0
-    else:
-        val_saturation = (diff / maximo) * 100
-
-    val_value = maximo * 100
-
-    return val_hue, val_saturation, val_value
 
 def cambia_color_desde_hex(event):
     color_nuevo = "#" + hex_entry.get()
@@ -57,12 +31,13 @@ def cambia_color_desde_hsv(v):
 #HEX
 cuadro_hex = LabelFrame(ventana,
                              text="COLORES HEX",
-                             font=("helvetica", 14),
+                             font=("Century", 14),
                              bg="#65B2FF")
 cuadro_hex.pack()
 
 hex_label = Label(cuadro_hex,
                   text = "HEX:",
+                  font=("Century", 14),
                   bg="#65B2FF")
 hex_label.pack()
 
@@ -76,7 +51,7 @@ hex_entry.pack()
 #RGB
 cuadro_rgb = LabelFrame(ventana,
                              text="COLORES RGB",
-                             font=("helvetica", 14),
+                             font=("Century", 14),
                              bg="#65B2FF")
 cuadro_rgb.pack()
 
@@ -107,7 +82,7 @@ rgb_b_entry.pack()
 #HSV
 cuadro_hsv = LabelFrame(ventana,
                              text="COLORES HSV",
-                             font=("helvetica", 14),
+                             font=("Century", 14),
                              bg="#65B2FF")
 cuadro_hsv.pack()
 
@@ -138,7 +113,7 @@ hsv_v_entry.pack()
 #Vista Previa
 cuadro_vista_previa = LabelFrame(ventana,
                              text="Vista Previa del color",
-                             font=("helvetica", 14, "bold"),
+                             font=("Century", 14, "bold"),
                              bg="#65B2FF")
 cuadro_vista_previa.pack()
 
