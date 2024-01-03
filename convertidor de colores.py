@@ -17,7 +17,6 @@ def cambia_color_desde_rgb(v):
     color_c = "#%02x%02x%02x" % (rgb_r_entry.get(), rgb_g_entry.get(), rgb_b_entry.get())
     vista_previa_canvas.configure(bg=color_c)
 
-
 def cambia_color_desde_hsv(v):
     hsv_hue = hsv_h_entry.get() / 360
     hsv_saturation = hsv_s_entry.get()/100
